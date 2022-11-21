@@ -94,3 +94,98 @@ main p {
 		font-size: 40px;
 	}
 }
+
+.material-icons {
+  font-size: 28px;
+  color: #efff6a;
+}
+
+#aWrap {
+  font-family: arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #555555;
+}
+
+#aPlay {
+  padding: 0;
+  margin: 0;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+#aCron {
+  font-size: 14px;
+  color: #c0ffee;
+  margin: 0 10px;
+}
+
+#aWrap input[type="range"] {
+  box-sizing: border-box;
+  appearance: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  background: 0;
+}
+#aWrap input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+}
+
+#aWrap input[type=range]::-webkit-slider-runnable-track {
+  background: #333333;
+}
+#aWrap input[type=range]::-moz-range-track {
+  background: #333333;
+}
+
+#aWrap input[type=range]::-webkit-slider-thumb {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 0;
+  background: #fff;
+}
+#aWrap input[type=range]::-moz-range-thumb {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 0;
+  background: #999999;
+}
+
+#aVolIco {
+  margin: 0 10px;
+}
+
+#aList {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  background: #111111;
+	height: 300px;
+	overflow-y: scroll;
+	text-align: center;
+}
+
+.aRow {
+  cursor: pointer;
+  padding: 10px 10px;
+	background: #222222;
+	border: 1px solid #333333;
+	border-radius: 10%;
+	margin-bottom: 10px;
+}
+
+.aRow.now {
+  color: #c0ffee;
+	background-image: url("space.png");
+	background-repeat: repeat;
+}
