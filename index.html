@@ -1,21 +1,43 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
 <title>
   Namir Hassan
 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="icon" type="image/png" href="favicon.ico">
-<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="img/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
 <script>
 window.addEventListener("DOMContentLoaded", () => {
 
   let playlist = [
-    {name: "AKM", src: "N99/1.mp3"},
-    {name: "Index", src: "N99/2.mp3"},
-    {name: "ε", src: "N99/3.mp3"},
-    {name: "Jenifa", src: "N99/4.mp3"},
-    {name: "Genesis", src: "N99/5.mp3"},
+    {name: "AKM", src: "audio/1.mp3"},
+    {name: "Index", src: "audio/2.mp3"},
+    {name: "ε", src: "audio/3.mp3"},
+    {name: "Jenifa", src: "audio/4.mp3"},
+    {name: "Genesis", src: "audio/5.mp3"},
+    {name: "Ai", src: "audio/6.mp3"},
+    {name: "enolA", src: "audio/7.mp3"},
+    {name: "Palindrome", src: "audio/8.mp3"},
+    {name: "MCMXXXII", src: "audio/9.mp3"},
+    {name: "Ion Quest", src: "audio/10.mp3"},
+    {name: "undefined", src: "audio/11.mp3"},
+    {name: "Inverted", src: "audio/12.mp3"},
+    {name: "Retrace", src: "audio/13.mp3"},
+    {name: "Broken Patterns", src: "audio/14.mp3"},
+
   ];
 
   const audio = new Audio(),
@@ -131,35 +153,58 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </head>
-<body>
-<main>
-  <div class="bg"></div>
-  <h1>Namir Hassan</h1>
-  <p>Full-stack Developer
-    <br>
-    <a href="https://store.steampowered.com/developer/namir">sm2bg</a>
-  </p>
-  <br>
-  <footer>
+  <body bgcolor="#222222" alink="#000000" vlink="#000000" link="#000000">
+		<!--Header-->
+    <table cellspacing="0" cellpadding="5px" class="pix" width="100%">
+      <tr>
+        <!--Title-->
+        <td class="head" bgcolor="#555555" width="100%">
+          <b>
+            <a href="https://www.namir.net" title="developed by Namir Hassan">namir.net</a>
+          </b>
+        </td>
+        <!--Title End-->
+        <!--Navigation-->
+        <td class="head" bgcolor="#555555">
+          <button class="openbtn" onclick="openNav()">☰</button>
+        </td>
+        <!--Navigation End-->
+      </tr>
+    </table>
     <div id="aWrap">
-          <button id="aPlay" disabled><span id="aPlayIco" class="material-icons">
-            play_arrow
-          </span></button>
+        <button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>
+        <div id="aCron">
+          <span id="aNow"></span> / <span id="aTime"></span>
+        </div>
+        <input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
+        <span id="aVolIco" class="material-icons">volume_up</span>
+        <input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
+    </div>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <h1 style="color: aliceblue; font-family: system-ui; text-align: center">Playlist</h1>
+      <div id="aList"></div>
+    </div>
+    <br>
+    <!--Header End-->
+		<table cellspacing="0" cellpadding="0" class="pix" width="97%" height="999px" align="center">
+		<tr>
+		<td class="die" bgcolor="#111111" valign="top">
+    <br>
+		  <table cellspacing="0" cellpadding="1" class="pix" align="center">
+        <tr>
+          <td class="die" bgcolor="#333333" width="700" height="100" align="center">
+            <img src="img/n99.png">
+          </td>
+        </tr>
+        <tr>
+          <td>
 
-          <div id="aCron">
-            <span id="aNow"></span> / <span id="aTime"></span>
-          </div>
+          </td>
+        </tr>
+      </table>
 
-          <input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
-
-          <span id="aVolIco" class="material-icons">volume_up</span>
-          <input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
-
-          <div id="aList"></div>
-      </div>
-  </footer>
-</main>
-</body>
+      <br>
+    </table>
+  </body>
 </html>
-<!-- Anwara Begum <3 -->
-<!-- AKM & Jenifa <3 -->
