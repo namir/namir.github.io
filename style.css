@@ -126,6 +126,7 @@ main p {
   color: #00ffff;
   font-size: 13px;
   font-family: system-ui;
+  background-color: #333333;
 }
 
 .audioPlayer {
@@ -136,3 +137,73 @@ main p {
 	opacity: .69;
 	background-color: purple;
 }
+
+.topnav a.split {
+	float: right;
+  }
+
+  .sidenav {
+	display: none;
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 64px;
+	opacity: 90%;
+  }
+  
+  .sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #818181;
+	display: block;
+  }
+
+  .sidenav .news:hover {
+	color: blue;
+	font-size: 18px;
+	font-family: system-ui;
+	background-color: #222222;
+  }
+
+  .sidenav .audio:hover {
+	color: red;
+	font-size: 18px;
+	font-family: system-ui;
+	background-color: #222222;
+  }
+
+  .sidenav .movies:hover {
+	color: green;
+	font-size: 18px;
+	font-family: system-ui;
+	background-color: #222222;
+  }
+
+  .sidenav .images:hover {
+	color: yellow;
+	font-size: 18px;
+	font-family: system-ui;
+	background-color: #222222;
+  }
+
+  .sidenav .resources:hover {
+	color: white;
+	font-size: 18px;
+	font-family: system-ui;
+	background-color: #222222;
+  }
+
+  
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
