@@ -48,7 +48,7 @@ main h1 {
 	font-weight: 400;
 	margin: 0;
 	line-height: 1;
-	color: hsl(180, 100%, 45%);
+	color: #c0ffee;
 }
 
 main h2 {
@@ -76,13 +76,14 @@ main p {
 	border-radius: 6px;
 	color: hsl(140, 7%, 80%);
 	background-color: rgba(255, 255, 255, .05);
+	border-color: #c0ded9;
 }
 
 .music:hover,
 .music:focus {
-	background-color: hsl(100, 80%, 50%);
-	text-decoration: underline;
-	color: #000000;
+	color: black;
+	background-color: #c0ded9;
+	opacity: .75;
 }
 
 .music a:not(:hover) {
@@ -93,4 +94,45 @@ main p {
 	main h1 {
 		font-size: 40px;
 	}
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  color: #c0ffee;
+  text-align: center;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: system-ui;
+}
+
+.topnav a:hover {
+  background-color: #222222;
+  color: #c0ded9;
+  font-size: 13px;
+  font-family: system-ui;
+}
+
+.topnav a.active {
+  color: #00ffff;
+  font-size: 13px;
+  font-family: system-ui;
+}
+
+.audioPlayer {
+	width: 100%; 
+	position: fixed; 
+	bottom: 0; 
+	left: 0;
+	opacity: .69;
+	background-color: purple;
 }

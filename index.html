@@ -9,15 +9,26 @@
 </head>
 <body>
 <main>
-  <div class="bg"></div>
- <h1>Namir Hassan</h1>
- <p>Full-stack Developer
-   <br>
-   <a href="https://store.steampowered.com/developer/namir">sm2bg</a>
- </p>
- <a href="https://soundcloud.com/n99/" class="music">N99</a>
+
+  <div class="topnav">
+  <a class="active" href="#">Home</a>
+  <a href="pages/info.html">About</a>
+  </div>
+
+<div class="bg"></div>
+<a href="" onclick="server()" class="music">play.namir.net</a>
+
+<script>
+  function server() {
+    navigator.clipboard.writeText("play.namir.net")
+    alert("Copied!")
+  }
+</script>
+
+<audio controls class="audioPlayer">
+  <source src="audio/1.mp3" type="audio/mp3">
+</audio>
+
 </main>
 </body>
 </html>
-<!-- Anwara Begum <3 -->
-<!-- AKM & Jenifa <3 -->
