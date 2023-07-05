@@ -4,17 +4,17 @@
 <title>
   Namir.NET
 </title>
-<link rel="icon" type="image/png" href="../icon.ico">
-<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/png" href="./icon.ico">
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <main>
 
   <div class="topnav">
-    <a href="../index.html">
+    <a href="./">
       <span style="font-size:13px;cursor:pointer">&#8592; Back</span>
     </a>
-    <a class="split" href="../pages/info.html">About</a>
+    <a class="split" href="./info">About</a>
     </div>
 
  <div class="bg"></div>
@@ -52,19 +52,19 @@
   function setup(song) {
     name = song;
     song = song+".mp3"
-    nextSong = "../audio/"+song;
+    nextSong = "./music/"+song;
 
     var title = document.getElementById('title');
     title.innerHTML = "Now playing: "+"N99 - "+name;
 
-    audioPlayer = document.getElementById('audio');
+    audioPlayer = document.getElementById('music');
     audioPlayer.src = nextSong;
     audioPLayer.load();
     audioPlayer.play();
   }
   </script>
 
-  <audio class="audioPlayer" id="audio" src="" controls="controls"> </audio>
+  <audio class="audioPlayer" id="music" src="" controls="controls" autoplay="autoplay"> </audio>
 
 </main>
 </body>
