@@ -18,7 +18,53 @@
     </div>
 
  <div class="bg"></div>
- <h1>Audio</h1>
+ <h2 id="title" class="title"></h2>
+ <br>
+
+ <div class="head">
+  <table style="font-family: system-ui;">
+    <thead>
+      <tr>
+        <th>N99 Playlist</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td onclick="setup('1')"><h3>1</h3></td>
+      </tr>
+      <tr>
+        <td onclick="setup('2')"><h3>2</h3></td>
+      </tr>
+      <tr>
+        <td onclick="setup('3')"><h3>3</h3></td>
+      </tr>
+      <tr>
+        <td onclick="setup('4')"><h3>4</h3></td>
+      </tr>
+      <tr>
+        <td onclick="setup('5')"><h3>5</h3></td>
+      </tr>
+    </tbody>
+  </table>
+
+ <script type="text/javascript">
+  var nextSong= "";
+  function setup(song) {
+    name = song;
+    song = song+".mp3"
+    nextSong = "../audio/"+song;
+
+    var title = document.getElementById('title');
+    title.innerHTML = "Now playing: "+name;
+
+    audioPlayer = document.getElementById('audio');
+    audioPlayer.src = nextSong;
+    audioPLayer.load();
+    audioPlayer.play();
+  }
+  </script>
+
+  <audio class="audioPlayer" id="audio" src="../audio/1.mp3" controls="controls" autoplay="autoplay"> </audio>
 
 </main>
 </body>

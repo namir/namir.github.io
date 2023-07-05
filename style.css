@@ -138,6 +138,13 @@ main p {
 	background-color: purple;
 }
 
+.title {
+	position: fixed; 
+	text-align: center;
+	font-size: 10px;
+	color: #c0ffee;
+}
+
 .topnav a.split {
 	float: right;
   }
@@ -207,3 +214,35 @@ main p {
 	font-size: 36px;
 	margin-left: 50px;
   }
+
+  .head {
+	overflow-y: auto;
+	height: 500px;
+  }
+  .head thead th {
+	width: 500px;
+  }
+  table {
+	border-collapse: collapse; /* make the table borders collapse to each other */
+	width: 100%;
+  }
+  th,
+  td {
+	padding: 8px 16px;
+	border: 1px solid #333333;
+  }
+  th {
+	background: #111111;
+  }
+
+  tr td:hover {
+	background-color: #333333;
+	cursor: pointer;
+  }
+
+h3 {
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0;
+	color: #c0ded9
+}
