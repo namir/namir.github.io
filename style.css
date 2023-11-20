@@ -200,7 +200,7 @@ main p {
   }
 
   .sidenav .resources:hover {
-	color: white;
+	color: purple;
 	font-size: 18px;
 	font-family: system-ui;
 	background-color: #222222;
