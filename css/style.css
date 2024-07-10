@@ -1,8 +1,135 @@
+.material-icons {
+  font-size: 28px;
+  color: #efff6a;
+}
+
+#aWrap {
+  font-family: system-ui;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-image: none;
+  border: 1px solid #000000;
+  background-color: #111111;
+}
+
+
+#aPlay {
+  padding: 0;
+  margin: 0;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+#aCron {
+  font-size: 12px;
+  color: #c0ffee;
+}
+
+#aPlayIco {
+  color: #c0ffee;
+  border: 1px solid #111;
+  background-color: #111;
+  border-radius: 5px;
+}
+
+#aWrap input[type="range"] {
+  box-sizing: border-box;
+  appearance: none;
+  border: 1.5px solid #333333;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: 0;
+}
+#aWrap input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+}
+
+#aWrap input[type=range]::-webkit-slider-runnable-track {
+  background: #222222;
+}
+#aWrap input[type=range]::-moz-range-track {
+  background: #333333;
+}
+
+#aWrap input[type=range]::-webkit-slider-thumb {
+  width: 16px; height: 24px;
+  border: 2px solid #111;
+  background: #666666;
+}
+#aWrap input[type=range]::-moz-range-thumb {
+  width: 16px; height: 16px;
+  border: 0;
+  background: #999999;
+}
+
+#aVolIco {
+  color: #c0ffee;
+  border: 1px solid #111;
+  background-color: #111;
+  border-radius: 5px;
+}
+
+#aList {
+  width: 100%;
+  background: #111111;
+  height: 420px;
+  overflow-y: scroll;
+  text-align: left;
+  font-family: system-ui;
+}
+
+.aRow {
+  cursor: pointer;
+  padding: 10px 10px;
+	background: #222222;
+	border: 1px solid #333333;
+	margin-bottom: 5px;
+  color: #000001;
+}
+
+.aRow:hover {
+  color: #c0ffee;
+  background-image: url(../img/ap.png);
+
+}
+
+.aRow.now {
+  color: #c0ffee;
+  background: #111111;
+}
+
+.openbtn {
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  border: 1px solid #222222;
+  width: 28px;
+  font-size: 20px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
 	a:hover {
 		cursor: pointer;
 	}
 
 	body {
+		background-image: url(../img/bg.gif);
+
 		font: normal 16px/1.4 Arial;
 		margin: 0;
 		display: flex;
@@ -11,11 +138,10 @@
 		background-color: #111;
 		min-height: 100vh;
 		min-height: 100dvh;
-		background-image: url(../img/bg.gif);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center; 
-    	backdrop-filter: blur(10px) saturate(75%);
+    	backdrop-filter: blur(10px);
 	}
 
 	::selection {
@@ -35,6 +161,7 @@
 	}
 
 	main {
+		background: url(../img/bg.png);
 		margin: auto;
 		padding: 30px;
 		gap: 40px;
@@ -45,7 +172,6 @@
 		max-width: 500px;
 		border: 1.5px solid #c0ffee;
 		border-radius: 9px;
-		background: url(../img/bg.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}

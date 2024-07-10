@@ -1,11 +1,148 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#111">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="icon" type="image/png" href="img/favicon.ico">
 <link rel="stylesheet" href="css/style.css">
 <title>N99 | Namir Hassan</title>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+  let playlist = [
+    {name: "AKM", src: "audio/1.mp3"},
+    {name: "Index", src: "audio/2.mp3"},
+    {name: "ε", src: "audio/3.mp3"},
+    {name: "Jenifa", src: "audio/4.mp3"},
+    {name: "Genesis", src: "audio/5.mp3"},
+    {name: "Ai", src: "audio/6.mp3"},
+    {name: "enolA", src: "audio/7.mp3"},
+    {name: "Palindrome", src: "audio/8.mp3"},
+    {name: "MCMXXXII", src: "audio/9.mp3"},
+    {name: "Ion Quest", src: "audio/10.mp3"},
+    {name: "undefined", src: "audio/11.mp3"},
+    {name: "Inverted", src: "audio/12.mp3"},
+    {name: "Retrace", src: "audio/13.mp3"},
+    {name: "Broken Patterns", src: "audio/14.mp3"},
+
+  ];
+
+  const audio = new Audio(),
+        aPlay = document.getElementById("aPlay"),
+        aPlayIco = document.getElementById("aPlayIco"),
+        aNow = document.getElementById("aNow"),
+        aTime = document.getElementById("aTime"),
+        aSeek = document.getElementById("aSeek"),
+        aVolume = document.getElementById("aVolume"),
+        aVolIco = document.getElementById("aVolIco"),
+        aList = document.getElementById("aList");
+
+  for (let i in playlist) {
+    let row = document.createElement("div");
+    row.className = "aRow";
+    row.innerHTML = playlist[i]["name"];
+    row.addEventListener("click", () => { audPlay(i); });
+    playlist[i]["row"] = row;
+    aList.appendChild(row);
+  }
+
+  var audNow = 0,
+      audStart = false,
+
+  audPlay = (idx, nostart) => {
+    audNow = idx;
+    audStart = nostart ? false : true;
+    audio.src = playlist[idx]["src"];
+    for (let i in playlist) {
+      if (i == idx) { playlist[i]["row"].classList.add("now"); }
+      else { playlist[i]["row"].classList.remove("now"); }
+    }
+  };
+
+  audio.addEventListener("canplay", () => { if (audStart) {
+    audio.play();
+    audStart = false;
+  }});
+
+  audio.addEventListener("ended", () => {
+    audNow++;
+    if (audNow >= playlist.length) { audNow = 0; }
+    audPlay(audNow);
+  });
+
+  audPlay(0, true);
+
+  audio.addEventListener("play", () => {
+    aPlayIco.innerHTML = "pause";
+  });
+  audio.addEventListener("pause", () => {
+    aPlayIco.innerHTML = "play_arrow";
+  });
+
+  aPlay.addEventListener("click", () => {
+    if (audio.paused) { audio.play(); }
+    else { audio.pause(); }
+  });
+
+  var timeString = (secs) => {
+    let ss = Math.floor(secs),
+        hh = Math.floor(ss / 3600),
+        mm = Math.floor((ss - (hh * 3600)) / 60);
+    ss = ss - (hh * 3600) - (mm * 60);
+
+    if (hh>0) { mm = mm<10 ? "0"+mm : mm; }
+    ss = ss<10 ? "0"+ss : ss;
+    return hh>0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}` ;
+  };
+
+  audio.addEventListener("loadedmetadata", () => {
+    aNow.innerHTML = timeString(0);
+    aTime.innerHTML = timeString(audio.duration);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    aNow.innerHTML = timeString(audio.currentTime);
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    aSeek.max = Math.floor(audio.duration);
+
+    var aSeeking = false;
+    aSeek.addEventListener("input", () => {
+      aSeeking = true;
+    });
+    aSeek.addEventListener("change", () => {
+      audio.currentTime = aSeek.value;
+      if (!audio.paused) { audio.play(); }
+      aSeeking = false;
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      if (!aSeeking) { aSeek.value = Math.floor(audio.currentTime); }
+    });
+  });
+
+  aVolume.addEventListener("change", () => {
+    audio.volume = aVolume.value;
+    aVolIco.innerHTML = (aVolume.value==0 ? "volume_mute" : "volume_up");
+  });
+
+  audio.addEventListener("canplay", () => {
+    aPlay.disabled = false;
+    aVolume.disabled = false;
+    aSeek.disabled = false;
+  });
+  audio.addEventListener("waiting", () => {
+    aPlay.disabled = true;
+    aVolume.disabled = true;
+    aSeek.disabled = true;
+  });
+});
+</script>
+
 </head>
 <body>
 	<main>
@@ -18,6 +155,20 @@
 			<a class="link" href="https://store.steampowered.com/publisher/namir">games</a>
 			<a class="link" href="https://github.com/namir">projects</a>
 		</div>
+
+		<div style="display: none" id="aCron">
+          	<i id="aNow"></i> / <i id="aTime"></i>
+        </div>
+		    <div style="display: none" id="aWrap">
+        		<button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>&nbsp;
+        		<input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
+        		
+    		</div>
+    	<div style="display: none" id="aList"></div>
+    	<div style="display: none" id="aWrap">
+    		<span id="aVolIco" class="material-icons">volume_up</span>&nbsp;
+        	<input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
+    	</div>
 	</main>
 </body>
 </html>
