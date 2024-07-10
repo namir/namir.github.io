@@ -13,6 +13,7 @@
 window.addEventListener("DOMContentLoaded", () => {
 
   let playlist = [
+  	{name: "Triad", src: "audio/0.mp3"},
     {name: "AKM", src: "audio/1.mp3"},
     {name: "Index", src: "audio/2.mp3"},
     {name: "ε", src: "audio/3.mp3"},
@@ -148,24 +149,24 @@ window.addEventListener("DOMContentLoaded", () => {
 	<main>
 		<div class="container">
 			<b>Namir Hassan</b>
-			<a href="https://sm2bg.com">sm2bg</a>
+			<a href="https://sm2bg.com" target="_blank">sm2bg</a>
 		</div>
 		<div class="links">
-			<a class="link" href="https://soundcloud.com/n99">music</a>
-			<a class="link" href="https://store.steampowered.com/publisher/namir">games</a>
-			<a class="link" href="https://github.com/namir">projects</a>
+			<a class="link" href="https://soundcloud.com/n99" title="Music" target="_blank">N99</a>
+			<a class="link" href="https://store.steampowered.com/publisher/namir" title="Game" target="_blank">Afelhem</a>
+			<a class="link" href="mailto:namir@namir.net" title="Email">Contact</a>
 		</div>
 
-		<div style="display: none" id="aCron">
+		<div id="aCron">
           	<i id="aNow"></i> / <i id="aTime"></i>
         </div>
-		    <div style="display: none" id="aWrap">
+		    <div id="aWrap">
         		<button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>&nbsp;
         		<input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
         		
     		</div>
-    	<div style="display: none" id="aList"></div>
-    	<div style="display: none" id="aWrap">
+    	<div id="aList"></div>
+    	<div id="aWrap">
     		<span id="aVolIco" class="material-icons">volume_up</span>&nbsp;
         	<input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
     	</div>

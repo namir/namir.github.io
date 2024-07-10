@@ -79,30 +79,33 @@
 #aList {
   width: 100%;
   background: #111111;
-  height: 420px;
+  height: 250px;
   overflow-y: scroll;
   text-align: left;
   font-family: system-ui;
+  opacity: 0.9;
 }
 
 .aRow {
   cursor: pointer;
-  padding: 10px 10px;
-	background: #222222;
-	border: 1px solid #333333;
-	margin-bottom: 5px;
-  color: #000001;
+  padding: 9px 9px;
+  background: #222222;
+  border: 1px solid #333333;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .aRow:hover {
   color: #c0ffee;
-  background-image: url(../img/ap.png);
-
+  background-color: #111111;
+  border: 1px solid #c0ffee;
 }
 
 .aRow.now {
   color: #c0ffee;
-  background: #111111;
+  background-image: url(../img/ap.png);
+  border: 1px solid #c0ded9;
 }
 
 .openbtn {
@@ -164,7 +167,7 @@
 		background: url(../img/bg.png);
 		margin: auto;
 		padding: 30px;
-		gap: 40px;
+		gap: 20px;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
