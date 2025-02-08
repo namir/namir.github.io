@@ -131,8 +131,8 @@
 	}
 
 	body {
-		background-image: url(../img/bg.gif);
-
+		background: url(../img/bg.gif) no-repeat center fixed;
+		transform: translateY(100px);
 		font: normal 16px/1.4 Arial;
 		margin: 0;
 		display: flex;
@@ -141,10 +141,10 @@
 		background-color: #111;
 		min-height: 100vh;
 		min-height: 100dvh;
-		-webkit-background-size: contain;
-  		-moz-background-size: contain;
-  		-o-background-size: contain;
-  		background-size: contain; 
+		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
     	backdrop-filter: blur(10px);
 	}
 
