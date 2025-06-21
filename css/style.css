@@ -13,6 +13,7 @@
   background-image: none;
   border: 1px solid #000000;
   background-color: #111111;
+  border-radius: 5%;
 }
 
 
@@ -33,19 +34,20 @@
   color: #c0ffee;
   border: 1px solid #111;
   background-color: #111;
-  border-radius: 5px;
+  border-radius: 100%;
 }
 
 #aWrap input[type="range"] {
   box-sizing: border-box;
   appearance: none;
-  border: 1.5px solid #333333;
+  border: 1.5px solid #111111;
   outline: none;
   box-shadow: none;
   width: 100%;
   padding: 0;
   margin: 0;
   background: 0;
+  border-radius: 5%;
 }
 #aWrap input[type="range"]::-webkit-slider-thumb {
   appearance: none;
@@ -73,7 +75,7 @@
   color: #c0ffee;
   border: 1px solid #111;
   background-color: #111;
-  border-radius: 5px;
+  border-radius: 100%;;
 }
 
 #aList {
@@ -84,6 +86,7 @@
   text-align: left;
   font-family: system-ui;
   opacity: 0.9;
+  border: #000000 1px solid;
 }
 
 .aRow {
@@ -132,20 +135,18 @@
 
 	body {
 		background: url(../img/bg.gif) no-repeat center fixed;
-		transform: translateY(100px);
 		font: normal 16px/1.4 Arial;
 		margin: 0;
-		display: flex;
-		flex-direction: column;
 		color: #fff;
 		background-color: #111;
-		min-height: 100vh;
-		min-height: 100dvh;
 		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
   		background-size: cover;
-    	backdrop-filter: blur(10px);
+		min-height: 100vh;
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
 	}
 
 	::selection {
@@ -173,6 +174,7 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		align-items: flex-start;
+		min-width: 500px;
 		max-width: 500px;
 		border: 1.5px solid #c0ffee;
 		border-radius: 9px;
