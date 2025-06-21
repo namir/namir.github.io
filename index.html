@@ -14,6 +14,34 @@
 <script>
 window.addEventListener("DOMContentLoaded", () => {
 
+  const gameLink = document.querySelector('.link[title="Games"]');
+  const musicLink = document.querySelector('.link[title="Music"]');
+  const mainElement = document.querySelector('main');
+
+  gameLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // If music player is showing, hide it first
+    if (mainElement.classList.contains('show-player')) {
+      mainElement.classList.remove('show-player');
+    }
+    
+    // Toggle software panel
+    mainElement.classList.toggle('show-software');
+  });
+
+  musicLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // If software panel is showing, hide it first
+    if (mainElement.classList.contains('show-software')) {
+      mainElement.classList.remove('show-software');
+    }
+    
+    // Toggle music player
+    mainElement.classList.toggle('show-player');
+  });
+
   let playlist = [
   	{name: "Simula", src: "audio/0.mp3"},
     {name: "Triad", src: "audio/1.mp3"},
@@ -185,29 +213,40 @@ window.addEventListener("DOMContentLoaded", () => {
 
 </head>
 <body>
-	<main>
+	<main class="main-bg">
+
 		<div class="container">
-			 <img src="img/logo.png" alt="Namir Hassan"> 
+			 <img src="img/logo.png" alt="Namir.NET"> 
 		</div>
 		<div class="links">
-			<a class="link" href="https://soundcloud.com/n99" title="Music" target="_blank">Music</a>
-			<a class="link" href="https://store.steampowered.com/publisher/namir" title="Games" target="_blank">Games</a>
-			<a class="link" href="mailto:namir@namir.net" title="Contact">Contact</a>
+			<a class="link" href="#" title="Music">&#9835; Music</a>
+			<a class="link" href="https://store.steampowered.com/publisher/namir" title="Games" target="_blank">&#9918; Games</a>
+			<a class="link" href="mailto:namir@namir.net" title="Contact">&#9993;</a>
 		</div>
 
 		<div id="aCron">
-          	<b><i>Now playing:</i> <i id="aTrack"></i> <i>| </i><i id="aNow"></i> / <i id="aTime"></i></b>
-        </div>
-		    <div id="aWrap">
-        		<button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>
-        		<input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
-        		
-    		</div>
-    	<div id="aList"></div>
-    	<div id="aWrap">
-    		<span id="aVolIco" class="material-icons">volume_up</span>
-        	<input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
-    	</div>
+      <b><i>Now playing:</i> <i id="aTrack"></i> <i>| </i><i id="aNow"></i> / <i id="aTime"></i></b>
+    </div>
+
+		<div id="aWrap">
+      <button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>
+      <input id="aSeek" type="range" min="0" value="0" step="1" disabled/>   		
+    </div>
+
+    <div id="aList"></div>
+    
+    <div id="aWrap">
+    	<span id="aVolIco" class="material-icons">volume_up</span>
+      <input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
+    </div>
+
+    <b id="crf">&#169; Namir Hassan</b>
+
+    <div id="n99">
+      <iframe src="https://store.steampowered.com/widget/848890/?t=Developed%20by%20Namir%20Hassan" frameborder="0" width="127" height="127"></iframe>
+      <iframe frameborder="0" src="https://itch.io/embed/3410640" width="127" height="127"><a href="https://namir.itch.io/ion-quest">Ion Quest by N99</a></iframe>
+    </div>
+
 	</main>
 </body>
 </html>
