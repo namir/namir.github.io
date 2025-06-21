@@ -73,6 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
         aPlayIco = document.getElementById("aPlayIco"),
         aNow = document.getElementById("aNow"),
         aTime = document.getElementById("aTime"),
+        aTrack = document.getElementById("aTrack"),
         aSeek = document.getElementById("aSeek"),
         aVolume = document.getElementById("aVolume"),
         aVolIco = document.getElementById("aVolIco"),
@@ -94,6 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
     audNow = idx;
     audStart = nostart ? false : true;
     audio.src = playlist[idx]["src"];
+    aTrack.textContent = playlist[idx]["name"];
     for (let i in playlist) {
       if (i == idx) { playlist[i]["row"].classList.add("now"); }
       else { playlist[i]["row"].classList.remove("now"); }
@@ -185,26 +187,25 @@ window.addEventListener("DOMContentLoaded", () => {
 <body>
 	<main>
 		<div class="container">
-			<b>Namir Hassan</b>
-			<a href="https://sm2bg.com" target="_blank">sm2bg</a>
+			 <img src="img/logo.png" alt="Namir Hassan"> 
 		</div>
 		<div class="links">
-			<a class="link" href="https://soundcloud.com/n99" title="Music" target="_blank">N99</a>
-			<a class="link" href="https://store.steampowered.com/publisher/namir" title="Game" target="_blank">Afelhem</a>
-			<a class="link" href="mailto:namir@namir.net" title="Email">Contact</a>
+			<a class="link" href="https://soundcloud.com/n99" title="Music" target="_blank">Music</a>
+			<a class="link" href="https://store.steampowered.com/publisher/namir" title="Games" target="_blank">Games</a>
+			<a class="link" href="mailto:namir@namir.net" title="Contact">Contact</a>
 		</div>
 
 		<div id="aCron">
-          	<i id="aNow"></i> / <i id="aTime"></i>
+          	<b><i>Now playing:</i> <i id="aTrack"></i> <i>| </i><i id="aNow"></i> / <i id="aTime"></i></b>
         </div>
 		    <div id="aWrap">
-        		<button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>&nbsp;
+        		<button id="aPlay" disabled><span id="aPlayIco" class="material-icons">play_arrow</span></button>
         		<input id="aSeek" type="range" min="0" value="0" step="1" disabled/>
         		
     		</div>
     	<div id="aList"></div>
     	<div id="aWrap">
-    		<span id="aVolIco" class="material-icons">volume_up</span>&nbsp;
+    		<span id="aVolIco" class="material-icons">volume_up</span>
         	<input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled/>
     	</div>
 	</main>
